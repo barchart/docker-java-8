@@ -3,6 +3,7 @@
 #
 
 FROM barchart/base
+MAINTAINER Jeremy Jongsma "jeremy@barchart.com"
 
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
