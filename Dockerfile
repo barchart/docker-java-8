@@ -14,4 +14,5 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
 	apt-get --yes update && \
 	apt-get --yes install oracle-jdk7-installer && \
 	apt-get clean && \
-	sh /tmp/clean-java.sh
+	sh /tmp/clean-java.sh && \
+	rm /tmp/clean-java.sh
