@@ -6,10 +6,12 @@ FROM barchart/base
 MAINTAINER Jeremy Jongsma "jeremy@barchart.com"
 
 ADD etc/sysctl.conf /etc/
+ADD clean-java.sh /tmp/
 
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
-
-RUN add-apt-repository --yes ppa:webupd8team/java
-RUN apt-get --yes update
-RUN apt-get --yes install oracle-jdk7-installer
+RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
+	add-apt-repository --yes ppa:webupd8team/java && \
+	apt-get --yes update && \
+	apt-get --yes install oracle-jdk7-installer && \
+	apt-get clean && \
+	sh /tmp/clean-java.sh
