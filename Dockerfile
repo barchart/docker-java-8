@@ -1,6 +1,8 @@
 #
 # Base image for deploying java applications. Installs Oracle Java 7 JDK.
 #
+# docker-build properties:
+# TAG=barchart/java
 
 FROM barchart/base
 MAINTAINER Jeremy Jongsma "jeremy@barchart.com"
