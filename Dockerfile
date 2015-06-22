@@ -5,7 +5,7 @@
 # TAG=barchart/java:latest
 
 FROM barchart/base
-MAINTAINER Jeremy Jongsma "jeremy@barchart.com"
+MAINTAINER Joel Dudley "joel.dudley@barchart.com"
 
 ADD etc/sysctl.conf /etc/
 ADD clean-java.sh /tmp/
@@ -14,7 +14,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
 	add-apt-repository --yes ppa:webupd8team/java && \
 	apt-get --yes update && \
-	apt-get --yes install oracle-jdk7-installer && \
+	apt-get --yes install oracle-jdk8-installer && \
 	apt-get clean && \
 	sh /tmp/clean-java.sh && \
 	rm /tmp/clean-java.sh
