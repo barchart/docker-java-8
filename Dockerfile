@@ -14,7 +14,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
 	add-apt-repository --yes ppa:webupd8team/java && \
 	apt-get --yes update && \
-	apt-get --yes install oracle-jdk8-installer && \
+	apt-get --yes install oracle-java8-installer && \
 	apt-get clean && \
 	sh /tmp/clean-java.sh && \
 	rm /tmp/clean-java.sh
