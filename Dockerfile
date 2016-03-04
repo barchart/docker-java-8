@@ -1,5 +1,5 @@
 #
-# Base image for deploying java applications. Installs Oracle Java 7 JDK.
+# Base image for deploying java applications. Installs Oracle Java 8 JDK.
 #
 # docker-build properties:
 # TAG=barchart/java-8:latest
@@ -11,7 +11,7 @@ ADD var /var/
 ADD etc/sysctl.conf /etc/
 ADD clean-java.sh /tmp/
 
-RUN ln -s /var/lib/java/jolokia-jvm-1.3.1-agent.jar /var/lib/java/jolokia-jvm-agent.jar
+RUN ln -s /var/lib/java/jolokia-jvm-1.3.3-agent.jar /var/lib/java/jolokia-jvm-agent.jar
 
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
