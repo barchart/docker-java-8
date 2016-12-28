@@ -18,7 +18,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-s
 	add-apt-repository --yes ppa:webupd8team/java && \
 	apt-get --yes update && \
 	apt-get --yes install oracle-java8-installer && \
-  apt-get install libsctp1 && \
+  apt-get --yes install libsctp1 && \
 	apt-get clean && \
 	sh /tmp/clean-java.sh && \
 	rm /tmp/clean-java.sh
