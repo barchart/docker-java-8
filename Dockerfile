@@ -5,13 +5,11 @@
 # TAG=barchart/java-8:latest
 
 FROM barchart/base
-MAINTAINER Joel Dudley "joel.dudley@barchart.com"
+MAINTAINER David Lucek "feeds@barchart.com"
 
 ADD var /var/
 ADD etc/sysctl.conf /etc/
 ADD clean-java.sh /tmp/
-
-RUN ln -s /var/lib/java/jolokia-jvm-1.3.3-agent.jar /var/lib/java/jolokia-jvm-agent.jar
 
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
 	echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections && \
