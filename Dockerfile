@@ -7,7 +7,6 @@
 FROM barchart/base
 MAINTAINER David Lucek "feeds@barchart.com"
 
-ADD var /var/
 ADD etc/sysctl.conf /etc/
 ADD clean-java.sh /tmp/
 
